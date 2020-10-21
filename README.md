@@ -1,4 +1,4 @@
-# How-to-position-the-custom-view-as-the-center-view-of-Xamarin.Forms-doughnut-series-chart-SfChart
+# How to position the custom view as the center view of Xamarin.Forms doughnut series chart (SfChart)
 
 This article explains how to position the desired view at the center of [doughnut series](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfChart.XForms.DoughnutSeries.html) in [Xamarin.Forms chart](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfChart.XForms.SfChart.html) by using the [CenterView](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfChart.XForms.DoughnutSeries.html#Syncfusion_SfChart_XForms_DoughnutSeries_CenterView) property which has been supported from the Syncfusion.Xamarin.SfChart version of 16.4.0.41.
 
@@ -55,6 +55,7 @@ chart.Series.Add(doughnutSeries);
 ```
 # Output
  
+ ![](output.png)
 
 **See also**
 
