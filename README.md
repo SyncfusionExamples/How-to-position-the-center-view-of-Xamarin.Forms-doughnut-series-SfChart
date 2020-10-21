@@ -1,6 +1,6 @@
-# How to position the custom view as the center view of Xamarin.Forms doughnut series chart (SfChart)
+# How to add a custom view to a hole in the Xamarin.Forms doughnut charts
 
-This article explains how to position the desired view at the center of [doughnut series](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfChart.XForms.DoughnutSeries.html) in [Xamarin.Forms chart](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfChart.XForms.SfChart.html) by using the [CenterView](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfChart.XForms.DoughnutSeries.html#Syncfusion_SfChart_XForms_DoughnutSeries_CenterView) property which has been supported from the Syncfusion.Xamarin.SfChart version of 16.4.0.41.
+This article explains how to add the desired view to a hole in the  [doughnut series](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfChart.XForms.DoughnutSeries.html) of [Xamarin.Forms chart](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfChart.XForms.SfChart.html) by using the [CenterView](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfChart.XForms.DoughnutSeries.html#Syncfusion_SfChart_XForms_DoughnutSeries_CenterView) property which has been supported from the Syncfusion.Xamarin.SfChart version of 16.4.0.41.
 
 https://help.syncfusion.com/xamarin/release-notes/v16.2.0.41?type=all#sfchart-features.
 
