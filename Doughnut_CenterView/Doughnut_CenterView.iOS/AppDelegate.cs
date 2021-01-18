@@ -23,6 +23,11 @@ namespace Doughnut_CenterView.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Syncfusion.SfChart.XForms.iOS.Renderers.SfChartRenderer.Init();
+            Syncfusion.XForms.iOS.Border.SfBorderRenderer.Init();
+            Syncfusion.XForms.iOS.Graphics.SfGradientViewRenderer.Init();
+            Syncfusion.XForms.iOS.Shimmer.SfShimmerRenderer.Init();
+            Syncfusion.XForms.iOS.Buttons.SfSegmentedControlRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
