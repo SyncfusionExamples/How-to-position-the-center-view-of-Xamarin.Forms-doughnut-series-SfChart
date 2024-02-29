@@ -53,7 +53,7 @@ var centerView = new StackLayout()
 doughnutSeries.CenterView = centerView;
 chart.Series.Add(doughnutSeries);
 ```
-# Output
+## Output
  
  ![](output.png)
 
