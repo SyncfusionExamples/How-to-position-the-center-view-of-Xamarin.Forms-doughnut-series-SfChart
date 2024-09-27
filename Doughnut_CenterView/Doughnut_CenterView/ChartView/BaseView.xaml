@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms" 
+             xmlns:sfborder="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms" 
+             xmlns:sfbutoon="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" 
+             xmlns:local="clr-namespace:Doughnut_CenterView"
+             x:Class="Doughnut_CenterView.BaseView">
+    <ContentPage.Resources>
+        <local:BorderColorConverter x:Key="borderColorConverter"/>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <local:BaseViewModel x:Name="viewmodel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+            <gradient:SfGradientView Grid.Row="0" Grid.RowSpan="3">
+                <gradient:SfGradientView.BackgroundBrush>
+                    <gradient:SfLinearGradientBrush>
+                        <gradient:SfLinearGradientBrush.GradientStops>
+                            <gradient:SfGradientStop Color="#147D81" Offset="0.0" />
+                            <gradient:SfGradientStop Color="#514769" Offset="1.0" />
+                        </gradient:SfLinearGradientBrush.GradientStops>
+                    </gradient:SfLinearGradientBrush>
+                </gradient:SfGradientView.BackgroundBrush>
+            </gradient:SfGradientView>
+            <sfborder:SfBorder BorderWidth="0" BorderColor="Transparent" Grid.Row="0">
+                <sfbutoon:SfSegmentedControl
+                    HeightRequest="10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    x:Name="segmentedControl"
+                    VisibleSegmentsCount="1"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    CornerRadius="25"
+                    SelectedIndex="-1" 
+                    ItemsSource="{Binding CustomViews}">
+
+                </sfbutoon:SfSegmentedControl>
+            </sfborder:SfBorder>
+            <sfborder:SfBorder Margin="5" Grid.Row="1" BorderColor="Transparent" CornerRadius="15" Padding="2" BackgroundColor="WhiteSmoke" >
+                <sfborder:SfBorder.Content>
+                    <chart:SfChart BackgroundColor="Transparent">
+                        <chart:SfChart.Legend>
+                            <chart:ChartLegend DockPosition="Right" OffsetX="-30" />
+                        </chart:SfChart.Legend>
+                        <chart:SfChart.Series>
+                            <chart:DoughnutSeries ItemsSource="{Binding MonthlyExpenses}" 
+                                                    XBindingPath="XData" 
+                                                    YBindingPath="YData" 
+                                                  CircularCoefficient="0.89"
+                                                  DoughnutCoefficient="0.6"
+                                                    >
+                                <chart:DoughnutSeries.DataMarker>
+                                    <chart:ChartDataMarker x:Name="dataMarker">
+                                        <chart:ChartDataMarker.LabelStyle>
+                                            <chart:DataMarkerLabelStyle LabelPosition="Center" BackgroundColor="Transparent" TextColor="White" LabelFormat="$ ###"/>
+                                        </chart:ChartDataMarker.LabelStyle>
+                                    </chart:ChartDataMarker>
+                                </chart:DoughnutSeries.DataMarker>
+
+                                <chart:DoughnutSeries.CenterView>
+                                    <StackLayout >
+                                        <Image Source="Avatar2.png" 
+                                               HeightRequest="45"
+                                              />
+                                    </StackLayout>
+                                </chart:DoughnutSeries.CenterView>
+
+                                <chart:DoughnutSeries.ColorModel>
+                                    <chart:ChartColorModel Palette="Custom" CustomBrushes="{Binding CustomColors}">
+                                    </chart:ChartColorModel>
+                                </chart:DoughnutSeries.ColorModel>
+                            </chart:DoughnutSeries>
+                        </chart:SfChart.Series>
+                    </chart:SfChart>
+                </sfborder:SfBorder.Content>
+            </sfborder:SfBorder>
+
+            <local:PhotoLayout BindingContext="{x:Reference viewmodel}" Grid.Row="2"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
